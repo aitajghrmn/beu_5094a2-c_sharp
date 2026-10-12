@@ -15,3 +15,4 @@ C:\Users\Lenovo\OneDrive\Desktop\5094a2-proglanguage\FlowerSystemTask\FlowerSyst
 C:\Users\Lenovo\OneDrive\Desktop\5094a2-proglanguage\FlowerSystemTask\FlowerSystemTask\obj\Debug\net8.0-windows\FlowerSystemTask.pdb
 C:\Users\Lenovo\OneDrive\Desktop\5094a2-proglanguage\FlowerSystemTask\FlowerSystemTask\obj\Debug\net8.0-windows\FlowerSystemTask.genruntimeconfig.cache
 C:\Users\Lenovo\OneDrive\Desktop\5094a2-proglanguage\FlowerSystemTask\FlowerSystemTask\obj\Debug\net8.0-windows\ref\FlowerSystemTask.dll
+C:\Users\Lenovo\OneDrive\Desktop\5094a2-proglanguage\FlowerSystemTask\FlowerSystemTask\obj\Debug\net8.0-windows\FlowerSystemTask.sourcelink.json

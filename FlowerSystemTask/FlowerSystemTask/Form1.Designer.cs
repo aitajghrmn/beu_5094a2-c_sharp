@@ -28,7 +28,9 @@ namespace FlowerSystemTask
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            toolTip1 = new ToolTip(components);
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             label5 = new Label();
@@ -156,9 +158,12 @@ namespace FlowerSystemTask
             // 
             maskedTextBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             maskedTextBox1.Location = new Point(18, 128);
+            maskedTextBox1.Mask = "00000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(80, 31);
             maskedTextBox1.TabIndex = 5;
+            maskedTextBox1.ValidatingType = typeof(int);
+            maskedTextBox1.MaskInputRejected += maskedTextBox1_MaskInputRejected;
             // 
             // button1
             // 
@@ -257,6 +262,7 @@ namespace FlowerSystemTask
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
+            ControlBox = false;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Form1";
@@ -294,5 +300,6 @@ namespace FlowerSystemTask
         private MaskedTextBox maskedTextBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private ToolTip toolTip1;
     }
 }

@@ -1,3 +1,85 @@
+
+//using System;
+//using System.Windows.Forms;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+//namespace FlowerSystemTask
+//{
+//    public partial class Form1 : Form
+//    {
+//        private decimal total = 0m;
+
+//        public Form1()
+//        {
+//            InitializeComponent();
+//        }
+
+//        private void Form1_Load(object sender, EventArgs e)
+//        {
+//            Text = "Cəmi: 0.00 AZN";
+//            textBox1.Focus();
+//        }
+
+//        private void button1_Click(object sender, EventArgs e)
+//        {
+//            string sayText = maskedTextBox1.Text.Replace("_", "").Trim();
+//            string qiymetText = maskedTextBox2.Text.Replace("_", "").Trim();
+
+//            if (string.IsNullOrWhiteSpace(textBox1.Text)
+//                || string.IsNullOrWhiteSpace(sayText)
+//                || string.IsNullOrWhiteSpace(qiymetText))
+//            {
+//                MessageBox.Show("Zəhmət olmasa bütün xanaları doldurun!", "Xəta",
+//                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+//            }
+//            else
+//            {
+//                bool countOk = int.TryParse(sayText, out int count);
+//                bool priceOk = decimal.TryParse(qiymetText, out decimal price);
+
+//                if (countOk && priceOk && count > 0 && price > 0)
+//                {
+//                    decimal result = count * price;
+
+//                    dataGridView1.Rows.Add(
+//                        textBox1.Text.Trim(),
+//                        count,
+//                        price.ToString("0.00"),
+//                        result.ToString("0.00"));
+
+//                    total += result;
+//                    Text = "Cəmi: " + total.ToString("0.00") + " AZN";
+
+//                    textBox1.Clear();
+//                    maskedTextBox1.Text = "";
+//                    maskedTextBox2.Text = "";
+//                    textBox1.Focus();
+//                }
+//                else
+//                {
+//                    MessageBox.Show("Say və qiymət düzgün daxil edilməyib! Say tam ədəd olmalı, hər iki dəyər isə müsbət (> 0) olmalıdır.",
+//                        "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//                }
+//            }
+//        }
+
+//        private void button2_Click(object sender, EventArgs e)
+//        {
+//            if (MessageBox.Show("Proqramdan çıxmaq istədiyinizə əminsinizmi?", "Çıxış",
+//                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+//            {
+//                Close();
+//            }
+//        }
+
+//        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+//        {
+//            toolTip1.ToolTipTitle = "Say";
+//            toolTip1.ToolTipIcon = ToolTipIcon.Info;
+//            toolTip1.IsBalloon = true;
+//        }
+//    }
+//}
 using System;
 using System.Globalization;
 using System.Windows.Forms;
@@ -6,7 +88,6 @@ namespace FlowerSystemTask
 {
     public partial class Form1 : Form
     {
-        // Toplam gəlir (bütün satışların cəmi)
         private decimal total = 0m;
 
         public Form1()
@@ -16,51 +97,43 @@ namespace FlowerSystemTask
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label5.Text = total.ToString("0.00", CultureInfo.InvariantCulture) + " AZN";
+            label5.Text = total.ToString("0.00") + " AZN";
+            Text = "Gül Satış Sistemi - Cəmi: 0.00 AZN";
             textBox1.Focus();
         }
 
-        // Satış et düyməsi
         private void button1_Click(object sender, EventArgs e)
         {
-            // maskedTextBox1 = Say, maskedTextBox2 = Qiymət
-            // Mask və boşluq simvollarını təmizləyirik
-            string ad = textBox1.Text.Trim();
             string sayText = maskedTextBox1.Text.Replace("_", "").Trim();
             string qiymetText = maskedTextBox2.Text.Replace("_", "").Trim().Replace(',', '.');
 
-            // 1) Boşluq yoxlanışı
-            if (string.IsNullOrWhiteSpace(ad)
+            if (string.IsNullOrWhiteSpace(textBox1.Text)
                 || string.IsNullOrWhiteSpace(sayText)
                 || string.IsNullOrWhiteSpace(qiymetText)
                 || qiymetText == ".")
             {
-                MessageBox.Show("Zəhmət olmasa bütün xanaları doldurun!", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Zəhmət olmasa bütün xanaları doldurun!", "Xəta",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // 2) Say və qiymətin ədəd və müsbət olması yoxlanışı
             bool countOk = int.TryParse(sayText, out int count);
             bool priceOk = decimal.TryParse(qiymetText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal price);
 
             if (countOk && priceOk && count > 0 && price > 0)
             {
-                // 3) Yekun məbləğin hesablanması
                 decimal result = count * price;
 
-                // 4) Cədvələ (DataGridView) əlavə edilməsi
                 dataGridView1.Rows.Add(
-                    ad,
-                    count.ToString(),
-                    price.ToString("0.00", CultureInfo.InvariantCulture),
-                    result.ToString("0.00", CultureInfo.InvariantCulture)
-                );
+                    textBox1.Text.Trim(),
+                    count,
+                    price.ToString("0.00"),
+                    result.ToString("0.00"));
 
-                // 5) Toplam gəlirin yenilənməsi
                 total += result;
-                label5.Text = total.ToString("0.00", CultureInfo.InvariantCulture) + " AZN";
+                label5.Text = total.ToString("0.00") + " AZN";
+                Text = "Cəmi: " + total.ToString("0.00") + " AZN";
 
-                // 6) Xanaların təmizlənməsi və fokusun bərpası
                 textBox1.Clear();
                 maskedTextBox1.Clear();
                 maskedTextBox2.Clear();
@@ -68,25 +141,26 @@ namespace FlowerSystemTask
             }
             else
             {
-                MessageBox.Show("Say və qiymət düzgün daxil edilməyib! Say tam ədəd olmalı, hər iki dəyər isə müsbət (> 0) olmalıdır.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Say və qiymət düzgün daxil edilməyib! Say tam ədəd olmalı, hər iki dəyər isə müsbət (> 0) olmalıdır.",
+                    "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Çıxış düyməsi
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Proqramdan çıxmaq istədiyinizə əminsinizmi?", "Çıxış",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dr == DialogResult.Yes)
+            if (MessageBox.Show("Proqramdan çıxmaq istədiyinizə əminsinizmi?", "Çıxış",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                Close();
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            // Dizayner üçün boş hadisə işləyicisi
+            toolTip1.ToolTipTitle = "Say";
+            toolTip1.ToolTipIcon = ToolTipIcon.Info;
+            toolTip1.IsBalloon = true;
+            toolTip1.Show("Yalnız rəqəm daxil edə bilərsiniz!", maskedTextBox1, 0, -20, 2000);
         }
     }
 }
