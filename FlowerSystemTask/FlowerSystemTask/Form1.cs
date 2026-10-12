@@ -41,7 +41,7 @@ namespace FlowerSystemTask
 
             if (countOk && priceOk && count > 0 && price > 0)
             {
-                // Vergüldən sonra 2-dən çox rəqəm olarsa xəbərdarlıq edir
+                
                 if ((price * 100) % 1 != 0)
                 {
                     MessageBox.Show("Qiymətdə vergüldən sonra ən çox 2 rəqəm daxil edilə bilər!", "Xəta",
