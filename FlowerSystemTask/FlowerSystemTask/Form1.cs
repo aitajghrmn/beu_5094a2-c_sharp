@@ -1,4 +1,4 @@
-         
+
 using System;
 using System.Globalization;
 using System.Windows.Forms;
@@ -16,15 +16,15 @@ namespace FlowerSystemTask
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label5.Text = total.ToString("0.00") + " AZN";
+            label5.Text = total.ToString("F2") + " AZN";
             Text = "Gül Satış Sistemi - Cəmi: 0.00 AZN";
             textBox1.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sayText = maskedTextBox1.Text.Replace("_", "").Trim();
-            string qiymetText = maskedTextBox2.Text.Replace("_", "").Trim().Replace(',', '.');
+            string sayText = maskedTextBox1.Text.Replace("_", "");
+            string qiymetText = maskedTextBox2.Text.Replace("_", "").Replace(',', '.');
 
             if (string.IsNullOrWhiteSpace(textBox1.Text)
                 || string.IsNullOrWhiteSpace(sayText)
@@ -37,21 +37,25 @@ namespace FlowerSystemTask
             }
 
             bool countOk = int.TryParse(sayText, out int count);
-            bool priceOk = decimal.TryParse(qiymetText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal price);
+            bool priceOk = decimal.TryParse(qiymetText, out decimal price);
 
             if (countOk && priceOk && count > 0 && price > 0)
             {
+                // Vergüldən sonra 2-dən çox rəqəm olarsa xəbərdarlıq edir
+                if ((price * 100) % 1 != 0)
+                {
+                    MessageBox.Show("Qiymətdə vergüldən sonra ən çox 2 rəqəm daxil edilə bilər!", "Xəta",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 decimal result = count * price;
 
-                dataGridView1.Rows.Add(
-                    textBox1.Text.Trim(),
-                    count,
-                    price.ToString("0.00"),
-                    result.ToString("0.00"));
+                dataGridView1.Rows.Add(textBox1.Text, count.ToString(), price.ToString("F2"), result.ToString("F2"));
 
                 total += result;
-                label5.Text = total.ToString("0.00") + " AZN";
-                Text = "Cəmi: " + total.ToString("0.00") + " AZN";
+                label5.Text = total.ToString("F2") + " AZN";
+                Text = "Cəmi: " + total.ToString("F2") + " AZN";
 
                 textBox1.Clear();
                 maskedTextBox1.Clear();
@@ -68,7 +72,7 @@ namespace FlowerSystemTask
         private void button2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Proqramdan çıxmaq istədiyinizə əminsinizmi?", "Çıxış",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question).ToString() == "Yes")
             {
                 Close();
             }

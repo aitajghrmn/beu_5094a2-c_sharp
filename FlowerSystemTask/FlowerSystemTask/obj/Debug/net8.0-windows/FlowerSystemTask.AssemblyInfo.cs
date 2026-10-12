@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlowerSystemTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cb99e55aaf1d2c5be453df01f5fa3644f226052")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlowerSystemTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlowerSystemTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

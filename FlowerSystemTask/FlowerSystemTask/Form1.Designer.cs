@@ -74,9 +74,9 @@ namespace FlowerSystemTask
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(651, 33);
+            pictureBox2.Location = new Point(670, 33);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(125, 62);
+            pictureBox2.Size = new Size(115, 62);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
@@ -86,7 +86,7 @@ namespace FlowerSystemTask
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(566, 28);
+            label5.Location = new Point(545, 28);
             label5.Name = "label5";
             label5.Size = new Size(95, 28);
             label5.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace FlowerSystemTask
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(435, 28);
+            label4.Location = new Point(415, 28);
             label4.Name = "label4";
             label4.Size = new Size(137, 28);
             label4.TabIndex = 3;
