@@ -1,0 +1,17 @@
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\bin\Debug\net8.0-windows\uni-lessons-9.exe
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\bin\Debug\net8.0-windows\uni-lessons-9.deps.json
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\bin\Debug\net8.0-windows\uni-lessons-9.runtimeconfig.json
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\bin\Debug\net8.0-windows\uni-lessons-9.dll
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\bin\Debug\net8.0-windows\uni-lessons-9.pdb
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni_lessons_9.Form1.resources
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.csproj.GenerateResource.cache
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.AssemblyInfoInputs.cache
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.AssemblyInfo.cs
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.dll
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\refint\uni-lessons-9.dll
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.pdb
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-lessons-9.genruntimeconfig.cache
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\ref\uni-lessons-9.dll
+C:\Users\DELL\Downloads\uni-lessons-9-master\uni-lessons-9-master\uni-lessons-9\obj\Debug\net8.0-windows\uni-less.E7D4D6F2.Up2Date
