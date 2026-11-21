@@ -1,0 +1,22 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityEventsAPI", "UniversityEventsAPI\UniversityEventsAPI.csproj", "{6B1D7C3A-2F4E-4A59-9C1B-3E8A5D7F2B10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B1D7C3A-2F4E-4A59-9C1B-3E8A5D7F2B10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1D7C3A-2F4E-4A59-9C1B-3E8A5D7F2B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1D7C3A-2F4E-4A59-9C1B-3E8A5D7F2B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1D7C3A-2F4E-4A59-9C1B-3E8A5D7F2B10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

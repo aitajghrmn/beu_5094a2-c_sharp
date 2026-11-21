@@ -1,0 +1,117 @@
+{
+  "info": {
+    "name": "UniversityEventsAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://localhost:7120" }
+  ],
+  "item": [
+    {
+      "name": "POST - Yeni tədbir yarat (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"AI Conference 2027\",\n  \"description\": \"Artificial Intelligence Conference\",\n  \"location\": \"Baku\",\n  \"eventDate\": \"2027-05-20T10:00:00\",\n  \"maxParticipants\": 150\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/events", "host": ["{{baseUrl}}"], "path": ["api", "events"] }
+      }
+    },
+    {
+      "name": "POST - Yanlış məlumat (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"\",\n  \"description\": \"Test\",\n  \"location\": \"Baku\",\n  \"eventDate\": \"2020-01-01T10:00:00\",\n  \"maxParticipants\": 0\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/events", "host": ["{{baseUrl}}"], "path": ["api", "events"] }
+      }
+    },
+    {
+      "name": "GET - Bütün tədbirlər",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events", "host": ["{{baseUrl}}"], "path": ["api", "events"] }
+      }
+    },
+    {
+      "name": "GET - ID-yə görə (1)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events/1", "host": ["{{baseUrl}}"], "path": ["api", "events", "1"] }
+      }
+    },
+    {
+      "name": "GET - Mövcud olmayan ID (404)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events/999", "host": ["{{baseUrl}}"], "path": ["api", "events", "999"] }
+      }
+    },
+    {
+      "name": "PUT - Yenilə (1)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"AI Conference 2027 (Updated)\",\n  \"description\": \"Updated description\",\n  \"location\": \"Baku\",\n  \"eventDate\": \"2027-06-01T10:00:00\",\n  \"maxParticipants\": 200\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/events/1", "host": ["{{baseUrl}}"], "path": ["api", "events", "1"] }
+      }
+    },
+    {
+      "name": "DELETE - Sil (204)",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/api/events/1", "host": ["{{baseUrl}}"], "path": ["api", "events", "1"] }
+      }
+    },
+    {
+      "name": "Əlavə - Adına görə axtarış",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events?search=ai", "host": ["{{baseUrl}}"], "path": ["api", "events"], "query": [{ "key": "search", "value": "ai" }] }
+      }
+    },
+    {
+      "name": "Əlavə - Tarixə görə sıralama",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events?sortBy=date", "host": ["{{baseUrl}}"], "path": ["api", "events"], "query": [{ "key": "sortBy", "value": "date" }] }
+      }
+    },
+    {
+      "name": "Əlavə - Yalnız gələcək tədbirlər",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events?upcoming=true", "host": ["{{baseUrl}}"], "path": ["api", "events"], "query": [{ "key": "upcoming", "value": "true" }] }
+      }
+    },
+    {
+      "name": "Əlavə - Şəhərə görə filtr",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events?city=Baku", "host": ["{{baseUrl}}"], "path": ["api", "events"], "query": [{ "key": "city", "value": "Baku" }] }
+      }
+    },
+    {
+      "name": "Əlavə - İştirakçı sayı 100-dən çox",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events?large=true", "host": ["{{baseUrl}}"], "path": ["api", "events"], "query": [{ "key": "large", "value": "true" }] }
+      }
+    },
+    {
+      "name": "Əlavə - JSON ixrac",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/events/export", "host": ["{{baseUrl}}"], "path": ["api", "events", "export"] }
+      }
+    }
+  ]
+}

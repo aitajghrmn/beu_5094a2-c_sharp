@@ -1,0 +1,53 @@
+@UniversityEventsAPI_HostAddress = https://localhost:7120
+
+### 1. POST - Yeni tədbir yarat
+POST {{UniversityEventsAPI_HostAddress}}/api/events
+Content-Type: application/json
+
+{
+  "name": "AI Conference 2027",
+  "description": "Artificial Intelligence Conference",
+  "location": "Baku",
+  "eventDate": "2027-05-20T10:00:00",
+  "maxParticipants": 150
+}
+
+### 2. GET - Bütün tədbirlər
+GET {{UniversityEventsAPI_HostAddress}}/api/events
+
+### 3. GET - ID-yə görə
+GET {{UniversityEventsAPI_HostAddress}}/api/events/1
+
+### 4. PUT - Yenilə
+PUT {{UniversityEventsAPI_HostAddress}}/api/events/1
+Content-Type: application/json
+
+{
+  "name": "AI Conference 2027 (Updated)",
+  "description": "Updated description",
+  "location": "Baku",
+  "eventDate": "2027-06-01T10:00:00",
+  "maxParticipants": 200
+}
+
+### 5. DELETE - Sil
+DELETE {{UniversityEventsAPI_HostAddress}}/api/events/1
+
+### Əlavə: adına görə axtarış
+GET {{UniversityEventsAPI_HostAddress}}/api/events?search=ai
+
+### Əlavə: tarixə görə sıralama (artan / azalan)
+GET {{UniversityEventsAPI_HostAddress}}/api/events?sortBy=date
+GET {{UniversityEventsAPI_HostAddress}}/api/events?sortBy=date&desc=true
+
+### Əlavə: yalnız gələcək tədbirlər
+GET {{UniversityEventsAPI_HostAddress}}/api/events?upcoming=true
+
+### Əlavə: şəhərə görə filtr
+GET {{UniversityEventsAPI_HostAddress}}/api/events?city=Baku
+
+### Əlavə: iştirakçı sayı 100-dən çox
+GET {{UniversityEventsAPI_HostAddress}}/api/events?large=true
+
+### Əlavə: JSON ixrac
+GET {{UniversityEventsAPI_HostAddress}}/api/events/export
